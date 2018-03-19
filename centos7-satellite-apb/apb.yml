@@ -1,0 +1,52 @@
+---
+version: 1.0
+name: centos7-satellite-apb
+description: centos7 via Satellite on Physical
+bindable: false
+async: optional
+metadata:
+  displayName: centos7 via Satellite on Physical
+plans:
+- name: default
+  description: Default deployment plan for centos7 via Satellite on Physical
+  free: true
+  metadata: {}
+  parameters:
+  - title: Satellite Requester
+    name: satellite_user
+    type: string
+    required: true
+    display_group: Satellite Credentials
+  - title: Satellite Password
+    name: satellite_password
+    type: string
+    display_type: password
+    required: true
+    display_group: Satellite Credentials
+  - name: min_memory
+    title: Minimum Memory (MB)
+    default: ''
+    display_group: Physical Requirements
+    type: integer
+    required: false
+  - name: min_disks_size
+    title: Minimum Disk Size (MB)
+    default: ''
+    display_group: Physical Requirements
+    type: integer
+    required: false
+  - name: server_name
+    title: Server Name
+    default: ''
+    display_group: Provision Detail
+    type: string
+    required: true
+  - name: host_group_name
+    title: Host Group Name
+    default: 'CentOS 7 via Kickstart/PXE'
+    display_group: Provision Detail
+    type: string
+    required: true
+
+
+    

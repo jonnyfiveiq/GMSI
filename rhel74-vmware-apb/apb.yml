@@ -1,0 +1,31 @@
+---
+version: 1.0
+name: rhel74-on-vmware-apb
+description: RHEL74 on VMWare
+bindable: false
+async: optional
+metadata:
+  displayName: RHEL74 on VMWare (APB)
+plans:
+- name: default
+  description: Default deployment plan for RHEL74 on VMWare-apb
+  free: true
+  metadata: {}
+  parameters:
+  - title: CFME Requester
+    name: cfme_user
+    type: string
+    required: true
+    display_group: CloudForms Credentials
+  - title: CFME Password
+    name: cfme_password
+    type: string
+    display_type: password
+    required: true
+    display_group: CloudForms Credentials
+  - name: vm_name
+    title: VM Name
+    default: ''
+    display_group: New tab/VM Details
+    type: string
+    required: false

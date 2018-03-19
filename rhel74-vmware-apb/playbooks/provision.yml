@@ -1,0 +1,7 @@
+- name: rhel74-vmware-apb playbook to provision the application
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  roles:
+  - role: provision-rhel74-vmware-apb
+    playbook_debug: false

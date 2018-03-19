@@ -1,0 +1,23 @@
+    - debug: var=href
+    - name: Call to CloudForms to order VM
+      uri:
+        url: "{{ service_template_href }}"
+        user: "{{ cfme_user }}"
+        password: "{{ cfme_password }}"
+        force_basic_auth: yes
+        method: POST
+        validate_certs: no
+        headers:
+           Content-Type: "application/json"
+        HEADER_Content-Type: "application/json"
+        body_format: json
+        body:
+        body: 
+          action: 'order'
+          resource:
+             href: "{{ href }}"
+             vm_name: "{{ vm_name }}"
+        return_content: yes
+      register: token_output
+
+    - debug: var=token_output.json
